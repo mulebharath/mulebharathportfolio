@@ -6,4 +6,20 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+export default defineConfig({
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
+            router: ['@tanstack/react-router', '@tanstack/react-start'],
+            icons: ['lucide-react'],
+            utils: ['clsx', 'tailwind-merge']
+          }
+        }
+      },
+      chunkSizeWarningLimit: 1000
+    }
+  }
+});
