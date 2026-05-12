@@ -57,8 +57,8 @@ function ContactPage() {
             <a href="mailto:mulebharath9@gmail.com" className="mt-2 block text-lg font-semibold hover:text-[var(--brand)]">mulebharath9@gmail.com</a>
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--ink)]/60">Phone</p>
-            <a href="tel:+917780391081" className="mt-2 block text-lg font-semibold hover:text-[var(--brand)]">+91 77803 91081</a>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--ink)]/60">WhatsApp</p>
+            <a href="https://wa.me/917780391081" target="_blank" rel="noopener noreferrer" className="mt-2 block text-lg font-semibold hover:text-[var(--brand)]">+91 77803 91081</a>
           </div>
           <div>
             <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--ink)]/60">Based in</p>
@@ -68,7 +68,7 @@ function ContactPage() {
             <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--ink)]/60">Elsewhere</p>
             <ul className="mt-2 space-y-1 text-lg font-semibold">
               <li><a href="https://github.com/mulebharath" target="_blank" rel="noreferrer" className="hover:text-[var(--brand)]">GitHub ↗</a></li>
-              <li><a href="https://linkedin.com/in/m-bharath-059693319/" target="_blank" rel="noreferrer" className="hover:text-[var(--brand)]">LinkedIn ↗</a></li>
+              <li><a href="https://www.linkedin.com/in/m-bharath-059693319/" target="_blank" rel="noreferrer" className="hover:text-[var(--brand)]">LinkedIn ↗</a></li>
             </ul>
           </div>
         </aside>

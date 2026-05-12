@@ -10,8 +10,11 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
+import { ProcessSection } from "./ProcessSection";
+import { ContactSection } from "./ContactSection";
+import { TypingText } from "./TypingText";
 
-function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+export function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const { ref, shown } = useReveal<HTMLDivElement>();
   return (
     <div
@@ -195,18 +198,20 @@ function ServicesSection() {
         <div className="absolute top-[32px] left-0 right-0 h-[2px] bg-black/50 z-0" />
         <div ref={trackRef} onMouseDown={handleMouseDown} onMouseLeave={handleMouseLeave} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove} className={`flex gap-6 sm:gap-10 px-[10vw] relative z-10 overflow-x-auto pb-16 pt-12 ${isDragging ? 'cursor-grabbing' : 'cursor-grab snap-x'} [&::-webkit-scrollbar]:hidden items-start select-none`}>
           {services.map((theme, i) => (
-            <div key={i} className="flex-shrink-0 w-[280px] h-[340px] sm:w-[440px] sm:h-[480px] bg-transparent snap-center relative transition-transform flex flex-col rounded-[16px] border-2 border-black overflow-hidden shadow-2xl hover:-translate-y-1">
-              <div className="h-[45%] bg-[#0A0A0A] relative flex items-center justify-center border-b border-dashed border-white/10" style={{ borderTop: `6px solid ${theme.topColor}` }}>
-                <h2 className="text-[80px] sm:text-[130px] font-black tracking-tighter" style={{ color: theme.topColor }}>{theme.topText}</h2>
-              </div>
-              <div className="h-[55%] flex flex-col p-6 justify-between" style={{ backgroundColor: theme.bottomBg }}>
-                <div>
-                  <p className="text-[8px] font-bold uppercase tracking-widest text-black/50">SERVICE</p>
-                  <h3 className="text-2xl sm:text-4xl font-black text-[#111]">{theme.midText}</h3>
+            <Reveal key={i} delay={i * 120} className="flex-shrink-0">
+              <div className="w-[280px] h-[340px] sm:w-[440px] sm:h-[480px] bg-transparent snap-center relative transition-transform flex flex-col rounded-[16px] border-2 border-black overflow-hidden shadow-2xl hover:-translate-y-1">
+                <div className="h-[45%] bg-[#0A0A0A] relative flex items-center justify-center border-b border-dashed border-white/10" style={{ borderTop: `6px solid ${theme.topColor}` }}>
+                  <h2 className="text-[80px] sm:text-[130px] font-black tracking-tighter" style={{ color: theme.topColor }}>{theme.topText}</h2>
                 </div>
-                <div className="text-center opacity-80"><span className="text-4xl sm:text-6xl font-light text-[#111]">{theme.botText}</span></div>
+                <div className="h-[55%] flex flex-col p-6 justify-between" style={{ backgroundColor: theme.bottomBg }}>
+                  <div>
+                    <p className="text-[8px] font-bold uppercase tracking-widest text-black/50">SERVICE</p>
+                    <h3 className="text-2xl sm:text-4xl font-black text-[#111]">{theme.midText}</h3>
+                  </div>
+                  <div className="text-center opacity-80"><span className="text-4xl sm:text-6xl font-light text-[#111]">{theme.botText}</span></div>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -216,19 +221,40 @@ function ServicesSection() {
 
 function TestimonialsSection() {
   const TESTIMONIALS = [
-    { quote: "One of the rare creatives who can design AND ship. Our launch metrics doubled.", name: "Ananya Sharma", role: "Head of Product, Lumen", initials: "AS" },
-    { quote: "Brought structure to chaos. The brand finally feels like us.", name: "Vikram Desai", role: "Founder, Atlas Studio", initials: "VD" },
-    { quote: "Fast, thoughtful, ridiculously detail-driven. We'd hire again in a heartbeat.", name: "Meera Krishnan", role: "CTO, Pulse", initials: "MK" },
+    { 
+      quote: "Creative, dedicated, and highly professional. Mulebharath delivers visually impressive and impactful work.", 
+      name: "Founder of Chillzee", 
+      role: "Chillzee", 
+      initials: "C" 
+    },
+    { 
+      quote: "Mulebharath combines creativity with strong execution and always brings fresh ideas to projects.", 
+      name: "HR & Founder", 
+      role: "MentorCity", 
+      initials: "M" 
+    },
+    { 
+      quote: "A passionate creator with excellent storytelling and design skills. His work stands out with originality and quality.", 
+      name: "President of Compendium", 
+      role: "Compendium", 
+      initials: "P" 
+    },
+    { 
+      quote: "He understands visual aesthetics really well and delivered a banner that felt unique and artistic.", 
+      name: "Pencil Art Creator", 
+      role: "Pencil Art", 
+      initials: "A" 
+    },
   ];
   return (
     <section id="testimonials" className="relative w-full scroll-mt-24 py-24" style={{ background: "color-mix(in oklab, var(--brand) 4%, var(--background))" }}>
       <div className="mx-auto max-w-[1400px] px-4 sm:px-8">
         <Reveal><p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand)]">Kind Words</p></Reveal>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {TESTIMONIALS.map((t, i) => (
-            <Reveal key={i} delay={i * 100}>
-              <article className="rounded-xl border border-[var(--ink)]/10 bg-background p-8" style={{ borderLeft: "4px solid var(--brand)" }}>
-                <p className="text-lg leading-relaxed text-[var(--ink)]/90">{t.quote}</p>
+            <Reveal key={i} delay={i * 150}>
+              <article className="rounded-xl border border-[var(--ink)]/10 bg-background p-8 relative overflow-hidden" style={{ borderLeft: "4px solid var(--brand)" }}>
+                <TypingText text={t.quote} delay={i * 150 + 500} speed={25} />
                 <div className="mt-8 flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-[var(--brand)] grid place-items-center text-white font-bold">{t.initials}</div>
                   <div><p className="text-sm font-bold">{t.name}</p><p className="text-xs text-[var(--ink)]/60">{t.role}</p></div>
@@ -286,13 +312,11 @@ export function PortfolioHero() {
       </section>
 
       <SkillsSection />
+      <ProcessSection />
       <WorkSection />
       <ServicesSection />
       <TestimonialsSection />
-      <section id="contact" className="py-32 text-center bg-[var(--ink)] text-white">
-        <h2 className="text-5xl font-black">Let's build something <span className="text-[var(--brand)]">real.</span></h2>
-        <a href="mailto:mulebharath9@gmail.com" className="mt-12 inline-block rounded-full bg-[var(--brand)] px-10 py-5 font-bold hover:scale-105 transition-transform">Say Hello →</a>
-      </section>
+      <ContactSection />
       <SiteFooter />
     </main>
   );

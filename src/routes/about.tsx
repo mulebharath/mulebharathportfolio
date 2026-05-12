@@ -3,6 +3,7 @@ import aboutArt from "@/assets/about-art.webp";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SectionHero } from "@/components/SectionHero";
+import { ContactSection } from "@/components/ContactSection";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -138,6 +139,7 @@ function AboutPage() {
         </div>
       </section>
 
+      <ContactSection />
       <SiteFooter />
     </main>
   );
