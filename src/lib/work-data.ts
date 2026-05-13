@@ -17,6 +17,13 @@ import cardValentine from "@/assets/cards/valentine.jpg";
 import cardBlogger from "@/assets/cards/blogger.jpg";
 import cardRelicHunt from "@/assets/cards/relichunt.jpg";
 
+// Design & Creative Work card imports
+import cardSocialMedia from "@/assets/cards/social-media.jpg";
+import cardBusinessDesigns from "@/assets/cards/business-designs.jpg";
+import cardMagazine from "@/assets/cards/magazine.jpg";
+import cardLogos from "@/assets/cards/logos.jpg";
+import cardDiwali from "@/assets/cards/diwali.jpg";
+
 // Design & Creative Work imports
 import businessDesign1 from "@/assets/work/design-creative/business-designs/Ice CREAM.pdf";
 import businessDesign2 from "@/assets/work/design-creative/business-designs/Ice Cream Menu.pdf";
@@ -312,6 +319,7 @@ export const WORK_GROUPS: WorkGroup[] = [
         t: "Social Media",
         s: "Event and campaign posters across print and social platforms.",
         tone: "orange",
+        img: cardSocialMedia,
         gallery: [social1, social2, social3, social4, social5, social6, social7, social8, social9, social10, social11, social12, social13, social14, social15, social16, social17, social18, social19, social20, social21, social22, social23, social24, social25, social26, social27, social28, social29, social30, social31, social32, social33, social34, social35, social36, social37, social38, social39],
         category: "Design & Creative Work",
         year: "2024",
@@ -332,6 +340,7 @@ export const WORK_GROUPS: WorkGroup[] = [
         t: "Business Designs",
         s: "Corporate branding and professional business collateral.",
         tone: "black",
+        img: cardBusinessDesigns,
         gallery: [businessDesign1, businessDesign2, businessDesign3, businessDesign4, businessDesign5, businessDesign6, businessDesign7],
         category: "Design & Creative Work",
         year: "2024",
@@ -351,6 +360,7 @@ export const WORK_GROUPS: WorkGroup[] = [
         t: "Magazine and News Letters",
         s: "Editorial layouts, publications, and newsletter design with refined typography.",
         tone: "white",
+        img: cardMagazine,
         gallery: [magazine1, magazine2, magazine3, magazine4, magazine5, magazine6],
         category: "Design & Creative Work",
         year: "2024",
@@ -370,6 +380,7 @@ export const WORK_GROUPS: WorkGroup[] = [
         t: "Logos",
         s: "Brand marks and identity systems built for clarity and recall.",
         tone: "orange",
+        img: cardLogos,
         gallery: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8],
         category: "Design & Creative Work",
         year: "2024",
@@ -546,6 +557,7 @@ export const WORK_GROUPS: WorkGroup[] = [
         t: "Diwali",
         s: "A socially aware festive comic promoting eco-friendly Diwali celebration with diyas instead of crackers.",
         tone: "orange",
+        img: cardDiwali,
         gallery: [diwaliPdf],
         category: "Visual Storytelling",
         year: "2025",
