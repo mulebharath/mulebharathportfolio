@@ -27,7 +27,7 @@ const tools = [
   // Design Tools
   { category: "Design", name: "Figma" },
   { category: "Design", name: "After Effects" },
-  { category: "Design", name: "Adobe XD" },
+  { category: "Design", name: "Canva" },
   { category: "Design", name: "Illustrator" },
   // Frontend Development
   { category: "Frontend", name: "React" },
