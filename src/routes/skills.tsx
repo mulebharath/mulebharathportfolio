@@ -23,6 +23,31 @@ const skills = [
   { n: "04", t: "Comics & Visual Storytelling", d: "Creating short comics and visual narratives that explore storytelling, expression, and creative communication — bringing a narrative-driven perspective into my design work." },
 ];
 
+const tools = [
+  // Design Tools
+  { category: "Design", name: "Figma" },
+  { category: "Design", name: "After Effects" },
+  { category: "Design", name: "Adobe XD" },
+  { category: "Design", name: "Illustrator" },
+  // Frontend Development
+  { category: "Frontend", name: "React" },
+  { category: "Frontend", name: "TypeScript" },
+  { category: "Frontend", name: "Next.js" },
+  { category: "Frontend", name: "Tailwind CSS" },
+  { category: "Frontend", name: "Framer" },
+  // Backend Development
+  { category: "Backend", name: "Node.js" },
+  { category: "Backend", name: "Express" },
+  { category: "Backend", name: "Python" },
+  { category: "Backend", name: "MongoDB" },
+  { category: "Backend", name: "PostgreSQL" },
+  // Other Tools
+  { category: "Other", name: "Vite" },
+  { category: "Other", name: "Three.js" },
+  { category: "Other", name: "GSAP" },
+  { category: "Other", name: "Git" },
+];
+
 function SkillsPage() {
   return (
     <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
@@ -46,6 +71,25 @@ function SkillsPage() {
               <p className="mt-3 text-sm leading-relaxed text-[var(--ink)]/70">{s.d}</p>
               <span className="absolute bottom-6 right-6 text-[var(--brand)] opacity-0 transition group-hover:opacity-100">→</span>
             </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Tools & Tech Section */}
+      <section className="mx-auto max-w-[1400px] px-8 py-24 border-t border-[var(--ink)]/15">
+        <div className="mb-16">
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--brand)]">Toolbox</p>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Tools & tech.</h2>
+        </div>
+        
+        <div className="flex flex-wrap gap-3">
+          {tools.map((tool) => (
+            <span
+              key={tool.name}
+              className="rounded-full border border-[var(--ink)]/20 bg-[var(--ink)]/[0.02] px-6 py-3 text-sm font-medium text-[var(--ink)]/80 transition-all hover:border-[var(--brand)] hover:bg-[var(--brand)]/5 hover:text-[var(--brand)]"
+            >
+              {tool.name}
+            </span>
           ))}
         </div>
       </section>
